@@ -118,9 +118,8 @@ func (n *fakeIPTables) DeleteChain(table, chain string) error {
 }
 
 func NewFakeIPTablesRunner() *iptablesRunner {
-	ipt4 := newFakeIPTables()
 	ipt6 := newFakeIPTables()
 
-	iptr := &iptablesRunner{ipt4, ipt6, true, true}
+	iptr := &iptablesRunner{ipt6, true, true}
 	return iptr
 }
